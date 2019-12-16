@@ -11,7 +11,7 @@ rm -f kind
 
 # Install kubectl
 curl -LO "https://storage.googleapis.com/kubernetes-release/release/v${KUBERNETES_VERSION}/bin/linux/amd64/kubectl"
-sudo install kubectl /usr/local/bin/
+install kubectl /usr/local/bin/
 rm -f kubectl
 
 kind create cluster
