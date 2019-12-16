@@ -15,5 +15,3 @@ install kubectl /usr/local/bin/
 rm -f kubectl
 
 kind create cluster
-
-kubectl get no
