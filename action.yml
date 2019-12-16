@@ -1,0 +1,22 @@
+---
+
+name: Kind cluster
+description: Create a Kubernetes cluster with kind
+author: John Strunk
+
+inputs:
+  kindVersion:
+    description: 'Version of Kind to use'
+    required: false
+    default: '0.6.1'
+  kubernetesVersion:
+    description: 'Version of Kubernetes to use'
+    required: false
+    default: '1.16.3'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    KIND_VERSION: '${{ inputs.kindVersion }}'
+    KUBERNETES_VERSION: '${{ inputs.kubernetesVersion }}'
