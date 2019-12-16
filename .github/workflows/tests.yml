@@ -1,0 +1,20 @@
+---
+name: Test the action
+on: [push, pull_request]
+
+jobs:
+  defaults:
+    name: Test with defaults
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Create kind cluster
+        uses: ./
+
+      - name: Verify cluster is up
+        run: |
+          which kind
+          which kubectl
+          kubectl get nodes
